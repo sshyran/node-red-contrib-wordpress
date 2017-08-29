@@ -1,0 +1,39 @@
+{
+  "name": "node-red-node-wordpress",
+  "version": "0.0.1",
+  "description": "WordPress nodes for Node-RED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automattic/node-red-node-wordpress.git"
+  },
+  "author": "Automattic",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/Automattic/node-red-node-wordpress/issues"
+  },
+  "contributors": [
+    {
+      "name": "Scott Evans"
+    },
+    {
+      "name": "Bartosz Budzanowski"
+    },
+    {
+      "name": "Paul Sealock"
+    },
+    {
+      "name": "Rich Collier"
+    }
+  ],
+  "homepage": "https://github.com/Automattic/node-red-node-wordpress#readme",
+  "keywords": [
+    "wordpress",
+    "node",
+    "red",
+    "api"
+  ],
+  "node-red" : {
+    "nodes": {
+    }
+  }
+}
