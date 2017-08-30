@@ -1,0 +1,11 @@
+{
+	"wordpress": {
+		"label": {
+			"site": "Site",
+			"option": "Option"
+		},
+		"errors": {
+
+		}
+	}
+}

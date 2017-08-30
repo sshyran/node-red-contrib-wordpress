@@ -1,0 +1,12 @@
+{
+	"wordpress-config": {
+		"label": {
+			"url": "Site URL",
+			"username": "Username",
+			"password": "Password"
+		},
+		"errors": {
+
+		}
+	}
+}

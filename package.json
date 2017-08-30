@@ -1,15 +1,15 @@
 {
-  "name": "node-red-node-wordpress",
+  "name": "node-red-contrib-wordpress",
   "version": "0.0.1",
   "description": "WordPress nodes for Node-RED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Automattic/node-red-node-wordpress.git"
+    "url": "git+https://github.com/Automattic/node-red-contrib-wordpress.git"
   },
   "author": "Automattic",
   "license": "GPLv2",
   "bugs": {
-    "url": "https://github.com/Automattic/node-red-node-wordpress/issues"
+    "url": "https://github.com/Automattic/node-red-contrib-wordpress/issues"
   },
   "contributors": [
     {
@@ -25,15 +25,20 @@
       "name": "Rich Collier"
     }
   ],
-  "homepage": "https://github.com/Automattic/node-red-node-wordpress#readme",
+  "homepage": "https://github.com/Automattic/node-red-contrib-wordpress#readme",
   "keywords": [
     "wordpress",
     "node",
     "red",
     "api"
   ],
-  "node-red" : {
+  "node-red": {
     "nodes": {
+      "woredpress-config": "wordpress/wordpress-config.js",
+      "wordpress": "wordpress/wordpress.js"
     }
+  },
+  "dependencies": {
+    "wpapi": "^1.1.2"
   }
 }
