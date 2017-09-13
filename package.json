@@ -23,6 +23,9 @@
     },
     {
       "name": "Rich Collier"
+    },
+    {
+      "name": "Mark Drovdahl"
     }
   ],
   "homepage": "https://github.com/Automattic/node-red-contrib-wordpress#readme",
@@ -35,7 +38,7 @@
   "node-red": {
     "nodes": {
       "woredpress-config": "wordpress/wordpress-config.js",
-      "wordpress": "wordpress/wordpress.js"
+      "wordpress-options": "wordpress/wordpress-options.js"
     }
   },
   "dependencies": {
