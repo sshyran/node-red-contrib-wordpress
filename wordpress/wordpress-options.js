@@ -3,13 +3,13 @@ module.exports = function(RED) {
 	var WPAPI = require( 'wpapi' );
 
 	// WordPress Get Option
-	
+
 	function wordpressGetOption( config ) {
 		RED.nodes.createNode( this, config );
 		var node = this;
 		node.config = config;
 		node.siteconfig = RED.nodes.getNode( node.config.config );
-		
+
 		this.on( 'input', function( msg ) {
 			var apiPromise = WPAPI.discover( node.siteconfig.url ).then( function( site ) {
 				return site.auth( {
@@ -21,7 +21,7 @@ module.exports = function(RED) {
 				// console.log( e );
 			 	// node.status( { fill: 'red', shape: 'dot', text: e } );
 			} );
-									
+
 			apiPromise.then( function( site ) {
 				if ( node.config.option ) { // allow for the option name to be set in msg.option too?
 					site.settings().then( function( response ) {
@@ -29,7 +29,7 @@ module.exports = function(RED) {
 							msg.payload = response[node.config.option];
 							node.status( { fill: 'green', shape: 'dot', text: 'ok' } );
 							node.send( msg );
-						} 
+						}
 					} ).catch( function( e ) {
 						node.status( { fill: 'red', shape: 'dot', text: e.code } );
 					} );
@@ -37,17 +37,17 @@ module.exports = function(RED) {
 			} );
 		} );
 	};
-	
+
 	RED.nodes.registerType( 'get-option', wordpressGetOption );
-	
+
 	// WordPress Set Option
-	
+
 	function wordpressSetOption( config ) {
 		RED.nodes.createNode( this, config );
 		var node = this;
 		node.config = config;
 		node.siteconfig = RED.nodes.getNode( node.config.config );
-		
+
 		this.on( 'input', function( msg ) {
 			var apiPromise = WPAPI.discover( node.siteconfig.url ).then( function( site ) {
 				return site.auth( {
@@ -59,7 +59,7 @@ module.exports = function(RED) {
 				// console.log( e );
 			 	// node.status( { fill: 'red', shape: 'dot', text: e } );
 			} );
-									
+
 			apiPromise.then( function( site ) {
 				if ( node.config.option && msg.payload ) { // allow for the option name to be set in msg.option too?
 					var key = node.config.option.toString();
@@ -79,8 +79,7 @@ module.exports = function(RED) {
 			} );
 		} );
 
-		
 	};
-	
+
 	RED.nodes.registerType( 'set-option', wordpressSetOption );
 }
