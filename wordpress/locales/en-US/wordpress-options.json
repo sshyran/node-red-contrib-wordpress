@@ -1,5 +1,5 @@
 {
-	"wordpress": {
+	"wordpress-options": {
 		"label": {
 			"site": "Site",
 			"option": "Option"
