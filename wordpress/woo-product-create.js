@@ -1,7 +1,7 @@
 "use strict";
 
 var data = {
-	name: 'Premium Quality',
+	name: 'Test 1',
 	type: 'simple',
 	regular_price: '21.99',
 	description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
@@ -37,8 +37,8 @@ module.exports = function(RED) {
 		this.on( 'input', function( msg ) {
 			var WooCommerce = new WooCommerceAPI({
 				url: node.siteconfig.url,
-				consumerKey: 'ck_b8385d9ac2e1ab4738b18226fb3ca4131d058a4c',
-				consumerSecret: 'cs_07982f3ce2fa4f8e098666051c6728f05478f1ff',
+				consumerKey: node.siteconfig.credentials.key,
+				consumerSecret: node.siteconfig.credentials.secret,
 				wpAPI: true,
 				version: 'wc/v1'
 			});

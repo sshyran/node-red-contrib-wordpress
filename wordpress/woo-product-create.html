@@ -1,14 +1,8 @@
 
-<!-- WordPress Get Option -->
-
 <script type="text/x-red" data-template-name="woo-product-create">
 	<div class="form-row">
 		<label for="node-input-config"><i class="fa fa-globe"></i> <span data-i18n="wordpress.label.site"></span></label>
 		<input type="text" id="node-input-config">
-	</div>
-	<div class="form-row">
-		<label for="node-input-option"><i class="fa fa-tasks"></i> <span data-i18n="wordpress.label.option">Thing</span></label>
-		<input type="text" id="node-input-option">
 	</div>
 </script>
 
@@ -22,7 +16,7 @@
 	RED.nodes.registerType( 'woo-product-create', {
 		category: 'social',
 		defaults: {
-			config: { type: 'wordpress-config', required: true },
+			config: { type: 'woo-config', required: true },
 			option: { value: '', required: true }
 		},
 		color:'#00aadc',
@@ -33,7 +27,7 @@
 		inputLabels: 'anything',
 		outputLabels: 'option value',
 		label: function() {
-			return this.option || 'woo-product-create';
+			return 'Woo Product: Create';
 		},
 		labelStyle: function() {
 			return this.option ? 'node_label_italic' : '';
