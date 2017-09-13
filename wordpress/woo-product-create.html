@@ -1,0 +1,42 @@
+
+<!-- WordPress Get Option -->
+
+<script type="text/x-red" data-template-name="woo-product-create">
+	<div class="form-row">
+		<label for="node-input-config"><i class="fa fa-globe"></i> <span data-i18n="wordpress.label.site"></span></label>
+		<input type="text" id="node-input-config">
+	</div>
+	<div class="form-row">
+		<label for="node-input-option"><i class="fa fa-tasks"></i> <span data-i18n="wordpress.label.option"></span></label>
+		<input type="text" id="node-input-option">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="woo-product-create">
+	<p>Get an option from the <code>wp_options</code> table.</p>
+	<p>Value will be returned as <code>msg.payload</code> if found. If the value does not exist it will return <code>false</code>.</p>
+	<p>Serialized options will be converted to JSON.</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType( 'woo-product-create', {
+		category: 'social',
+		defaults: {
+			config: { type: 'wordpress-config', required: true },
+			option: { value: '', required: true }
+		},
+		color:'#00aadc',
+		icon: 'wordpress.svg',
+		align: 'left',
+		inputs: 1,
+		outputs: 1,
+		inputLabels: 'anything',
+		outputLabels: 'option value',
+		label: function() {
+			return this.option || 'woo-product-create';
+		},
+		labelStyle: function() {
+			return this.option ? 'node_label_italic' : '';
+		}
+	})
+</script>

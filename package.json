@@ -38,10 +38,12 @@
   "node-red": {
     "nodes": {
       "woredpress-config": "wordpress/wordpress-config.js",
-      "wordpress-options": "wordpress/wordpress-options.js"
+      "wordpress-options": "wordpress/wordpress-options.js",
+      "woo-product-create": "wordpress/woo-product-create.js"
     }
   },
   "dependencies": {
+    "woocommerce-api": "^1.4.2",
     "wpapi": "^1.1.2"
   }
 }
