@@ -8,7 +8,7 @@ Run the following command in the root directory of your Node-RED install:
 
     npm install node-red-contrib-wordpress
 	
-For now we are using basic auth to interact with the core API. You will need to install the [basic auth plugin](https://github.com/wp-api/basic-auth) to your WordPress website.
+For now we are using basic auth to interact with the core API. You will need to install the [basic auth plugin](https://github.com/wp-api/basic-auth) to your WordPress website. It is highly recommended you use SSL on your site when using basic auth.
 
 We also have developed a [helper plugin](https://github.com/automattic/node-red-wordpress) which adds some additional endpoints and useful shortcodes which you may find useful to install and experiment with.
 
