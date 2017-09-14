@@ -2,6 +2,8 @@
 
 A set of [Node-RED](https://nodered.org/)</a> nodes to interact with the [WordPress.org REST API](https://developer.wordpress.org/rest-api/) and [WooCommerce REST API](http://woocommerce.github.io/woocommerce-rest-api-docs/).
 
+**Beta - Expect some node changes!**
+
 ## Install
 
 Run the following command in the root directory (default `~/.node-red`) of your Node-RED install:
