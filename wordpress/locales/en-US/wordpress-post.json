@@ -1,0 +1,11 @@
+{
+	"wordpress-post": {
+		"label": {
+			"site": "Site",
+			"search": "Search"
+		},
+		"errors": {
+
+		}
+	}
+}

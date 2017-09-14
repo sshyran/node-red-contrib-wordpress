@@ -3,12 +3,12 @@
 
 <script type="text/x-red" data-template-name="wordpress-post">
 	<div class="form-row">
-		<label for="node-input-config"><i class="fa fa-globe"></i> <span data-i18n="wordpress.label.site"></span></label>
+		<label for="node-input-config"><i class="fa fa-globe"></i> <span data-i18n="wordpress-post.label.site"></span></label>
 		<input type="text" id="node-input-config">
 	</div>
 	<div class="form-row">
-		<label for="node-input-post"><i class="fa fa-tasks"></i> <span data-i18n="wordpress.label.post"></span></label>
-		<input type="text" id="node-input-post">
+		<label for="node-input-search"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.post"></span></label>
+		<input type="text" id="node-input-search">
 	</div>
 </script>
 
@@ -21,7 +21,7 @@
 		category: 'social',
 		defaults: {
 			config: { type: 'wordpress-config', required: true },
-			option: { value: '', required: true }
+			title: { value: '', required: false }
 		},
 		color:'#00aadc',
 		icon: 'wordpress.svg',

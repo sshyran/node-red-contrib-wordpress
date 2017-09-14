@@ -18,11 +18,28 @@ module.exports = function(RED) {
 				password: node.siteconfig.credentials.password
 			});
 
-			wp.posts().then(function( data ) {
-    		node.send( data );
-			}).catch(function( err ) {
-			    node.send( err );
+			var postsPromise = wp.posts();
+
+			console.log( node.config.title );
+
+			if( node.config.title ) {
+				postsPromise = postsPromise.param( 'search', node.config.title );
+			}
+
+			postsPromise.get( function( err, data ) {
+		    if ( err ) {
+					console.log( err );
+		        // handle err
+		    }
+				console.log( JSON.stringify( data ) );
+		    node.send( data );
 			});
+
+			// .then(function( data ) {
+    	// 	node.send( data );
+			// }).catch(function( err ) {
+			//     node.send( err );
+			// });
 
 
 		} );
