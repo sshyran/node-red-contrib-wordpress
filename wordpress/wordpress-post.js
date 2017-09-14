@@ -18,10 +18,20 @@ module.exports = function(RED) {
 				password: node.siteconfig.credentials.password
 			});
 
-			wp.posts().then(function( data ) {
-    		node.send( data );
-			}).catch(function( err ) {
-			    node.send( err );
+			var postsPromise = wp.posts();
+			var filters = [ 'search', 'order', 'per_page', 'page' ];
+			filters.forEach( function( filter ) {
+				if( node.config[ filter ] ) {
+					postsPromise = postsPromise.param( filter, node.config[ filter ] )
+				}
+			} );
+
+			postsPromise.get( function( err, data ) {
+		    if ( err ) {
+					console.log( err );
+		        // handle err
+		    }
+		    node.send( { posts: data } );
 			});
 
 
