@@ -1,0 +1,40 @@
+
+<!-- WordPress Get Post -->
+
+<script type="text/x-red" data-template-name="wordpress-post">
+	<div class="form-row">
+		<label for="node-input-config"><i class="fa fa-globe"></i> <span data-i18n="wordpress.label.site"></span></label>
+		<input type="text" id="node-input-config">
+	</div>
+	<div class="form-row">
+		<label for="node-input-post"><i class="fa fa-tasks"></i> <span data-i18n="wordpress.label.post"></span></label>
+		<input type="text" id="node-input-post">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="wordpress-post">
+	<p>Get a post from the wp site.</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType( 'wordpress-post', {
+		category: 'social',
+		defaults: {
+			config: { type: 'wordpress-config', required: true },
+			option: { value: '', required: true }
+		},
+		color:'#00aadc',
+		icon: 'wordpress.svg',
+		align: 'left',
+		inputs: 1,
+		outputs: 1,
+		inputLabels: 'anything',
+		outputLabels: 'post value',
+		label: function() {
+			return this.post || 'wordpress-post';
+		},
+		labelStyle: function() {
+			return this.post ? 'node_label_italic' : '';
+		}
+	})
+</script>
