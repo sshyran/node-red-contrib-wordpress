@@ -4,13 +4,13 @@ A set of [Node-RED](https://nodered.org/)</a> nodes to interact with the [WordPr
 
 ## Install
 
-Run the following command in the root directory of your Node-RED install:
+Run the following command in the root directory (default `~/.node-red`) of your Node-RED install:
 
     npm install node-red-contrib-wordpress
 	
-For now we are using basic auth to interact with the core API. You will need to install the [basic auth plugin](https://github.com/wp-api/basic-auth) to your WordPress website. It is highly recommended you use SSL on your site when using basic auth.
+For now, we use [basic auth](https://tools.ietf.org/html/rfc2617) to interact with the WordPress API. You will need to install the [basic auth plugin](https://github.com/wp-api/basic-auth) to your WordPress website. We highly recommend you use SSL on your site when using basic auth.
 
-We also have developed a [helper plugin](https://github.com/automattic/node-red-wordpress) which adds some additional endpoints and useful shortcodes which you may find useful to install and experiment with.
+We also have a [helper plugin](https://github.com/automattic/node-red-wordpress) which adds additional REST API endpoints to WordPress and shortcodes you may find useful to install and experiment with.
 
 ## Nodes
 
@@ -24,11 +24,11 @@ We also have developed a [helper plugin](https://github.com/automattic/node-red-
 
 ### Get Option
 
-Grab a setting/option from the `wp_options` table. Only [certain options](https://developer.wordpress.org/rest-api/reference/settings/#arguments) are available on this endpoint by default.
+Get a setting/option from the `wp_options` table. Note, a limited set of [options](https://developer.wordpress.org/rest-api/reference/settings/#arguments) are available on this endpoint by default.
 
 ### Set Option
 
-Set a setting/option in the `wp_options` table. Only [certain options](https://developer.wordpress.org/rest-api/reference/settings/#arguments) are available on this endpoint by default.
+Set a setting/option in the `wp_options` table. Again, a limited set of [options](https://developer.wordpress.org/rest-api/reference/settings/#arguments) are available on this endpoint by default.
 
 ### Create Product
 
@@ -42,3 +42,4 @@ Made possble with the help of the following projects:
 
 * [Node WPAPI](https://github.com/WP-API/node-wpapi)
 * [WooCommerce API for Node](https://github.com/woocommerce/wc-api-node)
+* [WordPress REST API](https://developer.wordpress.org/rest-api/)
