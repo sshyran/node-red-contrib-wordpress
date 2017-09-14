@@ -34,7 +34,7 @@ Set a setting/option in the `wp_options` table. Only [certain options](https://d
 
 ## Usage
 
-Please see the wiki for examples and experiments.
+Please see [the wiki for examples and experiments](https://github.com/Automattic/node-red-contrib-wordpress/wiki).
 
 ## Credits
 
