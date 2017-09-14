@@ -1,0 +1,12 @@
+{
+	"woo-config": {
+		"label": {
+			"site": "Site",
+			"key": "Key",
+			"secret": "Secret"
+		},
+		"errors": {
+
+		}
+	}
+}

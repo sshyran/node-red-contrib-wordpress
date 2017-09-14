@@ -3,7 +3,7 @@
 
 <script type="text/x-red" data-template-name="woo-config">
 	<div class="form-row">
-		<label for="node-config-input-url"><i class="fa fa-globe"></i> <span data-i18n="woo-config.label.url"></span></label>
+		<label for="node-config-input-url"><i class="fa fa-globe"></i> <span data-i18n="woo-config.label.site"></span></label>
 		<input type="text" id="node-config-input-url" placeholder="https://example.com">
 	</div>
 	<div class="form-row">
@@ -24,6 +24,7 @@
 	RED.nodes.registerType( 'woo-config', {
 		category: 'config',
 		color: '#00aadc',
+		exportable: false,
 		defaults: {
 			url: { value: '', required: true }
 		},
