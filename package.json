@@ -37,7 +37,7 @@
   ],
   "node-red": {
     "nodes": {
-      "woredpress-config": "wordpress/wordpress-config.js",
+      "wordpress-config": "wordpress/wordpress-config.js",
       "woo-config": "wordpress/woo-config.js",
       "wordpress-options": "wordpress/wordpress-options.js",
       "woo-product-create": "wordpress/woo-product-create.js",
