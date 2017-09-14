@@ -20,7 +20,6 @@ module.exports = function(RED) {
 
 			var postsPromise = wp.posts();
 			var filters = [ 'search', 'order', 'per_page', 'page' ];
-			console.log( node.config );
 			filters.forEach( function( filter ) {
 				if( node.config[ filter ] ) {
 					postsPromise = postsPromise.param( filter, node.config[ filter ] )
@@ -32,7 +31,7 @@ module.exports = function(RED) {
 					console.log( err );
 		        // handle err
 		    }
-		    node.send( data );
+		    node.send( { posts: data } );
 			});
 
 
