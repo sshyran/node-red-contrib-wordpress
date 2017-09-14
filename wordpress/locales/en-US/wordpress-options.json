@@ -2,7 +2,8 @@
 	"wordpress-options": {
 		"label": {
 			"site": "Site",
-			"option": "Option"
+			"option": "Option",
+			"name": "Name"
 		},
 		"errors": {
 
