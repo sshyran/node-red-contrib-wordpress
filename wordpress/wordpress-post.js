@@ -19,27 +19,21 @@ module.exports = function(RED) {
 			});
 
 			var postsPromise = wp.posts();
-
-			console.log( node.config.title );
-
-			if( node.config.title ) {
-				postsPromise = postsPromise.param( 'search', node.config.title );
-			}
+			var filters = [ 'search', 'order', 'per_page', 'page' ];
+			console.log( node.config );
+			filters.forEach( function( filter ) {
+				if( node.config[ filter ] ) {
+					postsPromise = postsPromise.param( filter, node.config[ filter ] )
+				}
+			} );
 
 			postsPromise.get( function( err, data ) {
 		    if ( err ) {
 					console.log( err );
 		        // handle err
 		    }
-				console.log( JSON.stringify( data ) );
 		    node.send( data );
 			});
-
-			// .then(function( data ) {
-    	// 	node.send( data );
-			// }).catch(function( err ) {
-			//     node.send( err );
-			// });
 
 
 		} );

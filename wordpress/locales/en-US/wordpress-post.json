@@ -2,7 +2,11 @@
 	"wordpress-post": {
 		"label": {
 			"site": "Site",
-			"search": "Search"
+			"search": "Search",
+			"order" : "Order",
+			"order_by": "Order by",
+			"per_page": "Per page",
+			"page": "Page"
 		},
 		"errors": {
 

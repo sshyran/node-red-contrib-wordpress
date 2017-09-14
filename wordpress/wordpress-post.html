@@ -7,8 +7,24 @@
 		<input type="text" id="node-input-config">
 	</div>
 	<div class="form-row">
-		<label for="node-input-search"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.post"></span></label>
+		<label for="node-input-search"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.search"></span></label>
 		<input type="text" id="node-input-search">
+	</div>
+	<div class="form-row">
+		<label for="node-input-order"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.order"></span></label>
+		<input type="text" id="node-input-order">
+	</div>
+	<div class="form-row">
+		<label for="node-input-order_by"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.order_by"></span></label>
+		<input type="text" id="node-input-order_by">
+	</div>
+	<div class="form-row">
+		<label for="node-input-per_page"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.per_page"></span></label>
+		<input type="text" id="node-input-per_page">
+	</div>
+	<div class="form-row">
+		<label for="node-input-page"><i class="fa fa-tasks"></i> <span data-i18n="wordpress-post.label.page"></span></label>
+		<input type="text" id="node-input-page">
 	</div>
 </script>
 
@@ -21,7 +37,9 @@
 		category: 'social',
 		defaults: {
 			config: { type: 'wordpress-config', required: true },
-			title: { value: '', required: false }
+			search: { value: '', required: false },
+			order: { value: '', required: false },
+			order_by: { value: '', required: false }
 		},
 		color:'#00aadc',
 		icon: 'wordpress.svg',
