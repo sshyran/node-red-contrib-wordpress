@@ -18,11 +18,19 @@ We also have a [helper plugin](https://github.com/automattic/node-red-wordpress)
 
 ### Get Posts
 
-### Create/Update Posts
+Grab a collection of posts. There is a basic set of query options within the Node. Expect more soon.
+
+### Create Posts
+
+Create new posts on your WordPress site.
 
 ### Get Page
 
+Coming soon
+
 ### Create/Update Page
+
+Coming soon
 
 ### Get Option
 
@@ -33,6 +41,8 @@ Get a setting/option from the `wp_options` table. Note, a limited set of [option
 Set a setting/option in the `wp_options` table. Again, a limited set of [options](https://developer.wordpress.org/rest-api/reference/settings/#arguments) are available on this endpoint by default.
 
 ### Create Product
+
+Injests a product object and passes this to the WooCommerce API. This is a just for demo purposes at the moment.
 
 ## Usage
 
