@@ -40,4 +40,40 @@ module.exports = function(RED) {
 	};
 
 	RED.nodes.registerType( 'wordpress-post', wordpressGetPost );
+
+	// WordPress Create Post
+
+	function wordpressCreatePost( config ) {
+		RED.nodes.createNode( this, config );
+		var node = this;
+		node.config = config;
+		node.siteconfig = RED.nodes.getNode( node.config.config );
+
+		this.on( 'input', function( msg ) {
+			var wp = new WPAPI({
+				endpoint: node.siteconfig.url,
+			// This assumes you are using basic auth, as described further below
+				username: node.siteconfig.username,
+				password: node.siteconfig.credentials.password
+			});
+
+			var fields = [ 'title', 'content', 'status' ];
+			fields.forEach( function( field ) {
+				if( msg[ field ] ) {
+					node.config[ field ] = msg[ field ];
+				}
+			} );
+
+			wp.posts().create( {
+				title: node.config.title,
+				content: node.config.content,
+				status: node.config.status
+			} ).then( function( response ) {
+				msg.payload = response;
+				node.send( msg );
+			} );
+		} );
+	};
+
+	RED.nodes.registerType( 'wordpress-post-create', wordpressCreatePost );
 }
