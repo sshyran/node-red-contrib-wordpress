@@ -19,7 +19,7 @@
 <script type="text/x-red" data-help-name="get-option">
 	<p>Get an option from the <code>wp_options</code> table.</p>
 	<p>Value will be returned as <code>msg.payload</code> if found. If the value does not exist it will return <code>false</code>.</p>
-	<p>Serialized options will be converted to JSON.</p>
+	<p>The option choice can also be passed in via `msg.option`.</p>
 </script>
 
 <script type="text/javascript">
@@ -28,7 +28,7 @@
 		defaults: {
 			config: { type: 'wordpress-config', required: true },
 			name: { value: '' },
-			option: { value: '', required: true }
+			option: { value: '' }
 		},
 		color:'#00aadc',
 		icon: 'wordpress.svg',
@@ -66,7 +66,7 @@
 <script type="text/x-red" data-help-name="set-option">
 	<p>Set an option in the <code>wp_options</code> table.</p>
 	<p>Option will be created if it does not exist. API response be returned as <code>msg.payload</code>.</p>
-	<p>JSON options will be serialized on save.</p>
+	<p>The option choice can also be passed in via `msg.option`.</p>
 </script>
 
 <script type="text/javascript">
@@ -75,15 +75,15 @@
 		defaults: {
 			config: { type: 'wordpress-config', required: true },
 			name: { value: '' },
-			option: { value: '', required: true }
+			option: { value: '' }
 		},
 		color:'#00aadc',
 		icon: 'wordpress.svg',
 		align: 'right',
 		inputs: 1,
 		outputs: 1,
-		inputLabels: 'input',
-		outputLabels: 'output',
+		inputLabels: 'option value',
+		outputLabels: 'updated option value',
 		label: function() {
 			return this.name || this.option || 'set option';
 		},
