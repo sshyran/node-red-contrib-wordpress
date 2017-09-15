@@ -31,7 +31,8 @@ module.exports = function(RED) {
 					console.log( err );
 		        // handle err
 		    }
-		    node.send( { posts: data } );
+				msg.payload = data;
+		    node.send( msg );
 			});
 
 
