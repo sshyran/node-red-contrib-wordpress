@@ -12,8 +12,7 @@ module.exports = function(RED) {
 
 		this.on( 'input', function( msg ) {
 			var wp = new WPAPI({
-    		endpoint: node.siteconfig.url,
-    	// This assumes you are using basic auth, as described further below
+				endpoint: node.siteconfig.url,
 				username: node.siteconfig.username,
 				password: node.siteconfig.credentials.password
 			});
@@ -27,12 +26,12 @@ module.exports = function(RED) {
 			} );
 
 			postsPromise.get( function( err, data ) {
-		    if ( err ) {
+				if ( err ) {
 					console.log( err );
-		        // handle err
-		    }
+					// handle err
+				}
 				msg.payload = data;
-		    node.send( msg );
+				node.send( msg );
 			});
 
 
@@ -52,7 +51,6 @@ module.exports = function(RED) {
 		this.on( 'input', function( msg ) {
 			var wp = new WPAPI({
 				endpoint: node.siteconfig.url,
-			// This assumes you are using basic auth, as described further below
 				username: node.siteconfig.username,
 				password: node.siteconfig.credentials.password
 			});
@@ -66,7 +64,7 @@ module.exports = function(RED) {
 
 			wp.posts().create( {
 				title: node.config.title,
-				content: node.config.content,
+				content: msg.payload || node.config.content,
 				status: node.config.status
 			} ).then( function( response ) {
 				msg.payload = response;

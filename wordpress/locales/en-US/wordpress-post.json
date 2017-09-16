@@ -6,7 +6,10 @@
 			"order" : "Order",
 			"order_by": "Order by",
 			"per_page": "Per page",
-			"page": "Page"
+			"page": "Page",
+			"title": "Post Title",
+			"content": "Post Content",
+			"status": "Post Status"
 		},
 		"errors": {
 
