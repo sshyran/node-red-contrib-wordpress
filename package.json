@@ -41,7 +41,9 @@
       "woo-config": "wordpress/woo-config.js",
       "wordpress-options": "wordpress/wordpress-options.js",
       "woo-product-create": "wordpress/woo-product-create.js",
-      "wordpress-post": "wordpress/wordpress-post.js"
+      "wordpress-post": "wordpress/wordpress-post.js",
+      "wordpress-data-get": "wordpress/wordpress-data-get.js",
+      "wordpress-data-set": "wordpress/wordpress-data-set.js"
     }
   },
   "dependencies": {

@@ -1,0 +1,37 @@
+<script type="text/x-red" data-template-name="wordpress-data-get">
+	<div class="form-row">
+		<label for="node-input-siteurl"><i class="fa fa-globe"></i> <span data-i18n="wordpress-data-get.label.siteurl">Site URL</span></label>
+		<input type="text" id="node-input-siteurl">
+	</div>
+	<div class="form-row">
+		<label for="node-input-key"><i class="fa fa-globe"></i> <span data-i18n="wordpress-data-get.label.key">Data Key</span></label>
+		<input type="text" id="node-input-key">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="wordpress-data-get">
+	<p>Get a data value from the Node Red WordPress Companion plugin.</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType( 'wordpress-data-get', {
+		category: 'social',
+		defaults: {
+			siteurl: { value: '', required: true },
+			key: { value: '', required: true }
+		},
+		color:'#00aadc',
+		icon: 'wordpress.svg',
+		align: 'left',
+		inputs: 1,
+		outputs: 1,
+		inputLabels: 'anything',
+		outputLabels: 'post value',
+		label: function() {
+			return this.post || 'wordpress-data-get';
+		},
+		labelStyle: function() {
+			return this.post ? 'node_label_italic' : '';
+		}
+	})
+</script>

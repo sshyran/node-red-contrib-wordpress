@@ -1,0 +1,41 @@
+<script type="text/x-red" data-template-name="wordpress-data-set">
+	<div class="form-row">
+		<label for="node-input-siteurl"><i class="fa fa-globe"></i> <span data-i18n="wordpress-data-set.label.siteurl">Site URL</span></label>
+		<input type="text" id="node-input-siteurl">
+	</div>
+	<div class="form-row">
+		<label for="node-input-key"><i class="fa fa-globe"></i> <span data-i18n="wordpress-data-set.label.key">Data Key</span></label>
+		<input type="text" id="node-input-key">
+	</div>
+	<div class="form-row">
+		<label for="node-input-val"><i class="fa fa-globe"></i> <span data-i18n="wordpress-data-set.label.val">Data Value</span></label>
+		<input type="text" id="node-input-val">
+</script>
+
+<script type="text/x-red" data-help-name="wordpress-data-set">
+	<p>Set a key / value in the Node Red WordPress Companion plugin.</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType( 'wordpress-data-set', {
+		category: 'social',
+		defaults: {
+			siteurl: { value: '', required: true },
+			key: { value: '', required: true },
+			val: { value: '', required: true }
+		},
+		color:'#00aadc',
+		icon: 'wordpress.svg',
+		align: 'left',
+		inputs: 1,
+		outputs: 1,
+		inputLabels: 'anything',
+		outputLabels: 'post value',
+		label: function() {
+			return this.post || 'wordpress-data-set';
+		},
+		labelStyle: function() {
+			return this.post ? 'node_label_italic' : '';
+		}
+	})
+</script>
