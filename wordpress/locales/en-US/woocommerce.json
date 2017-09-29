@@ -1,0 +1,12 @@
+{
+	"woocommerce": {
+		"label": {
+			"store": "Store",
+			"method": "Method",
+			"endpoint": "Endpoint"
+		},
+		"errors": {
+
+		}
+	}
+}

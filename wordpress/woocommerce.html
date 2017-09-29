@@ -1,0 +1,52 @@
+
+<script type="text/x-red" data-template-name="woocommerce">
+	<div class="form-row">
+		<label for="node-input-config"><i class="fa fa-globe"></i> <span data-i18n="woocommerce.label.store"></span></label>
+		<input type="text" id="node-input-config">
+	</div>
+	<div class="form-row">
+		<label for="node-input-method"><i class="fa fa-globe"></i> <span data-i18n="woocommerce.label.method"></span></label>
+		<select id="node-input-method">
+			<option value="get" selected>GET</span></option>
+			<option value="post">POST</span></option>
+			<option value="put">PUT</span></option>
+			<option value="delete">DELETE</span></option>
+			<option value="options">OPTIONS</span></option>
+		</select>
+	</div>
+	<div class="form-row">
+		<label for="node-input-endpoint"><i class="fa fa-globe"></i> <span data-i18n="woocommerce.label.endpoint"></span></label>
+		<input type="text" id="node-input-endpoint">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="woocommerce">
+	<p>Access the WooCommerce API for a WooCommerce enabled WordPress site.</p>
+	<p>The node accepts a <code>msg.payload</code> data object for POST and PUT requests. Properties of the data object are described <a href="https://woocommerce.github.io/woocommerce-rest-api-docs/?javascript#products">here</a>.</p>
+	<p>An API call's <code>endpoint</code> can be either designated in the node's config, or can be passed along in the <code>msg</code> and <code>msg.endpoint</code></p>
+	<p>WooCommerce API <a href="https://github.com/woocommerce/wc-api-node">documentation</a>.</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType( 'woocommerce', {
+		category: 'social',
+		defaults: {
+			config: { type: 'woo-config', required: true },
+			method: { value: 'get', required: true },
+			endpoint: { value: '' }
+		},
+		color:' #B187A9',
+		icon: 'woo.svg',
+		align: 'left',
+		inputs: 1,
+		outputs: 1,
+		inputLabels: 'anything',
+		outputLabels: 'option value',
+		label: function() {
+			return 'WooCommerce: ' + this.method.toUpperCase();
+		},
+		labelStyle: function() {
+			return this.option ? 'node_label_italic' : '';
+		}
+	})
+</script>
